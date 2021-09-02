@@ -1,11 +1,18 @@
-
-
-
-#include <stdio.h>
-int main(void){
-	char var_name[20];
-	printf("May I know your name? ");
-	scanf("%s", var_name);
-	printf("Hello %s, let us be friends.\n", var_name);
-	return 0;
+#include "main.h"
+#include <ctype.h>
+/**
+ *_isupper - check if c is upper
+ *@c: is entry point
+ *Return: 0
+ **/
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
