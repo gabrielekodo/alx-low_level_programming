@@ -8,28 +8,16 @@
  *
  * Description: prints the sum of the two diagonals of a
  * square matrix of integers
- * Return: always 0
+ * Return: void
  */
 
 void print_diagsums(int *a, int size)
 {
-	int i, j, s1, s2;
+	 int i = 0, x_sum = 0, y_sum = 0;
 
-	s1 = 0;
-	s2 = 0;
-	for (i = 0; i < size; i++)
-	{
-		for (j = 0; j < size; j++)
-		{
-			if (i == j)
-			{
-				s1 += *((a + i * size) + j);
-			}
-			if ((i + j) == (size - 1))
-			{
-				s2 += *((a + i * size) + j);
-			}
-		}
-	}
-	printf("%i, %i\n", s1, s2);
+	 while (i < size)
+		 x_sum += a[size - i][size - i], y_sum += a[i][size - i];
+	 printf("%d, %d", x_sum, y_sum);
+
+	
 }
