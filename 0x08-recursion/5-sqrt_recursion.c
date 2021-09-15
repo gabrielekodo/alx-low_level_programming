@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * is_squre_root - determines the square root of
+ * is_square_root - determines the square root of
  * @j: an input value
  * @i: input value
  *
  * Description: determines the square root
- * Return: returns the input val
+ * Return: returns the input value
  */
 
 int is_square_root(int i, int j)
