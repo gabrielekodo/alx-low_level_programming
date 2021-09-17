@@ -9,23 +9,17 @@
  * Return: 0 for success
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i, res;
+	int sum = 0, argc_tmp = --argc;
+	char *argv_tmp = argc ? *++argv : "";
 
-	res = 0;
+	for (; *argv_tmp || ((argc_tmp -= !*argv_tmp) > 0); argv_tmp++)
+		if (*argv_tmp && (*argv_tmp < '0' || *argv_tmp > '9'))
+			return (printf("Error\n") && 1);
+	while (argc--)
+		sum += atoi(*argv++);
+	printf("%d\n", sum);
 
-	for (i = 0; i < argc; i++)
-	{
-		if (i > 0)
-		{
-			if (atoi(argv[i]) == 0)
-			{
-				return (printf("Error\n"), 1);
-			}
-			res += atoi(argv[i]);
-		}
-	}
-	printf("%d\n", res);
 	return (0);
 }
